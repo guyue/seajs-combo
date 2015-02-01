@@ -1,15 +1,15 @@
 
 build:
-	@seatools build
+	./node_modules/.bin/seatools/ build
 
 test:
-	@seatools site
-	@seatools test --local
-	@seatools test --http
+	./node_modules/.bin/seatools/ site
+	./node_modules/.bin/seatools/ test --local
+	./node_modules/.bin/seatools/ test --http
 
 totoro:
-	@seatools site
-	@seatools test --totoro
+	./node_modules/.bin/seatools/ site
+	./node_modules/.bin/seatools/ test --totoro
 
 size:
-	@seatools size
+	./node_modules/.bin/seatools/ size

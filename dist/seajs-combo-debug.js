@@ -12,6 +12,7 @@ var comboHash = data.comboHash = {}
 var comboSyntax = ["??", ","]
 var comboMaxLength = 2000
 var comboExcludes
+var comboBase
 var comboSuffix
 
 
@@ -26,6 +27,7 @@ function setComboHash(uris) {
 
   data.comboSyntax && (comboSyntax = data.comboSyntax)
   data.comboMaxLength && (comboMaxLength = data.comboMaxLength)
+  data.comboBase && (comboBase = data.comboBase.replace("://", "__").replace(/\/$/, ''))
   data.comboSuffix && (comboSuffix = data.comboSuffix)
 
   comboExcludes = data.comboExcludes
@@ -152,6 +154,9 @@ function meta2paths(meta) {
       root += "/" + KEYS[0]
       m = m[KEYS[0]]
       KEYS = m.__KEYS
+      if (root === comboBase) {
+        break;
+      }
     }
 
     if (KEYS.length) {
