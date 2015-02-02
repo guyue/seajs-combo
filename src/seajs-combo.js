@@ -20,9 +20,11 @@ seajs.on("fetch", setRequestUri)
 
 function setComboHash(uris) {
   var len = uris.length
+  /*
   if (len < 2) {
     return
   }
+  */
 
   data.comboSyntax && (comboSyntax = data.comboSyntax)
   data.comboMaxLength && (comboMaxLength = data.comboMaxLength)
@@ -47,9 +49,9 @@ function setComboHash(uris) {
     }
   }
 
-  if (needComboUris.length > 1) {
+  //if (needComboUris.length > 1) {
     paths2hash(uris2paths(needComboUris))
-  }
+  //}
 }
 
 function setRequestUri(data) {
